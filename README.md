@@ -48,14 +48,13 @@ This project enhances the security and functionality of a JWKS server by:
    ```bash
    pip install -r requirements.txt
 
-#Running the Server
+# Running the Server
 To start the server on localhost:8080, run:
 python main.py
 
 
-#API Endpoints
+# API Endpoints
 POST /register: Registers a new user, generating a secure UUIDv4 password and returning it to the user.
-
 Request body:
 {
     "username": "NewUser",
@@ -75,26 +74,26 @@ Request body:
 }
 GET /.well-known/jwks.json: Returns a JSON Web Key Set containing public keys for JWT verification.
 
-#Logging and Rate Limiting
+# Logging and Rate Limiting
 Authentication requests are logged in the auth_logs.db table, including the request IP address, user ID, and timestamp.
 Rate limiting is applied to the /auth endpoint, restricting requests to 10 requests per second. Requests that exceed this limit will receive a 429 Too Many Requests response.
 
 
-#Testing
+# Testing
 Gradebot Blackbox Testing
 To ensure functionality, run the Gradebot client in the same directory as main.py and totally_not_my_privateKeys.db:
 
 gradebot.exe project3
 
 
-#Unit Testing and Coverage
+# Unit Testing and Coverage
 Run unit tests and check coverage:
 
 coverage run -m unittest discover
 coverage report
 
 
-#Screenshots
+# Screenshots
 [Gradebot Output](Gradebot.png): Shows Gradebot rubric table and points awarded.
 
-[Test Coverage Report](TestSuite Coverage): Shows the test coverage percentage and coverage details for test_server.py.
+[Test Coverage Report](TestSuite Coverage.png): Shows the test coverage percentage and coverage details for test_server.py.
